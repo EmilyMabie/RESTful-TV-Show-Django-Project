@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit a Show</title>
+    {% load staticfiles %}
+    <!-- CSS CUSTOM -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+</head>
+<body>
+    <h1>Edit Show {{show.id}}</h1>
+
+    {% if messages %}    
+    <ul class="messages">
+        {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}> {{ message }} </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+        <form action="/shows/{{show.id}}/update" method="POST">
+            {% csrf_token %}
+            <label> Title <input type="text" name="title"></label>
+            <label class="network" for="network">Network: </label>
+                <select name="network">
+                {% for network in networks %}
+                    <option value="{{ network.id }}">{{ network.name }}</option>
+                {% endfor %}
+                </select>
+            <br> <br>
+            <label> Release Date <input type="text" name="release_date"></label>
+            <label> Description <input type="text" name="description"></label>
+            <input id="button" type="Submit" value="Update">
+        </form>
+        <br><br>
+        <a href="/shows/{{show.id}}">Go To the Show</a>
+</body>
+</html>
+

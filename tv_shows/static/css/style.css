@@ -1,0 +1,56 @@
+* {
+  font-family: "American Typewriter", “Playfair Display”, “Didot”,
+    "Times New Roman", Times, serif;
+}
+
+h1 {
+  color: rgb(70, 27, 75);
+  text-shadow: 2px 2px 8px rgb(129, 55, 110);
+  font-size: 60px;
+}
+
+h2 {
+  color: rgb(92, 145, 144);
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  color: white;
+  background-color: rgb(242, 184, 196);
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+th {
+  background-color: rgb(129, 55, 110);
+  font-size: 20px;
+}
+
+a:link {
+  color: rgb(48, 80, 78);
+}
+
+a:visited {
+  color: rgb(85, 141, 137);
+}
+
+label {
+  display: block;
+  padding-bottom: 15px;
+  padding-left: 5px;
+}
+
+.network {
+  display: inline;
+}
+
+#button {
+  margin-left: 5px;
+  padding-left: 230px;
+  padding-top: 3px;
+  padding-right: 230px;
+  padding-bottom: 3px;
+  font-size: 20px;
+}
